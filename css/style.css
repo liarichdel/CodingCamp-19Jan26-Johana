@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f5f0;
+    color: #5d4037;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #8d6e63;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.form-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d7ccc8;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #5d4037;
+    background-color: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #8d6e63;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    border: none;
+}
+
+.add-button {
+    background-color: #6d4c41;
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.add-button:hover {
+    background-color: #5d4037;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-button {
+    background-color: #d7ccc8;
+    color: #5d4037;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.filter-button:hover {
+    background-color: #bcaaa4;
+}
+
+.filter-button.active {
+    background-color: #6d4c41;
+    color: white;
+}
+
+.list-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#task-list {
+    min-height: 200px;
+}
+
+.task-item {
+    background-color: #f5f1eb;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-item.done {
+    opacity: 0.7;
+    background-color: #f0f0f0;
+}
+
+.task-item.done .task-title {
+    text-decoration: line-through;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 17px;
+    margin-bottom: 5px;
+    color: #5d4037;
+}
+
+.task-info {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    color: #8d6e63;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid #d7ccc8;
+    color: #5d4037;
+}
+
+.action-button:hover {
+    background-color: #f5f1eb;
+}
+
+.done-button:hover {
+    border-color: #4caf50;
+    color: #4caf50;
+}
+
+.delete-button:hover {
+    border-color: #f44336;
+    color: #f44336;
+}
+
+#empty-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8d6e63;
+    display: none;
+}
+
+#empty-message p {
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header, .form-section, .list-section {
+        padding: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .task-actions {
+        align-self: flex-end;
+    }
+}

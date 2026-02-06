@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>To-Do List</h1>
+            <p>Help you manage your day ^^</p>
+        </div>
+        <div class="form-section">
+            <form id="todo-form">
+                <div class="form-group">
+                    <input type="text" id="task-input" placeholder="Tulis tugasmu disini..." required>
+                    <div class="error" id="task-error"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="date" id="date-input" required>
+                        <div class="error" id="date-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="priority-select">
+                            <option value="normal">Daily</option>
+                            <option value="important">Important</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="add-button">
+                    Tambah Tugas
+                </button>
+            </form>
+        </div>
+
+        <div class="filter-section">
+            <div class="filters">
+                <button class="filter-button active" data-filter="all">Semua</button>
+                <button class="filter-button" data-filter="todo">Belum Selesai</button>
+                <button class="filter-button" data-filter="done">Selesai</button>
+            </div>
+        </div>
+
+        <div class="list-section">
+            <div id="task-list">
+            </div>
+            <div id="empty-message">
+                <p>Belum ada tugas</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
